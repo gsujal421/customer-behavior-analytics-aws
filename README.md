@@ -98,16 +98,14 @@ customer-behavior-analytics-aws/
 ├── data/
 │ ├── raw/
 │ ├── processed/
-│ ├── curated/
 │
-├── notebooks/
+├── scripts/
 │ ├── customer_data_preprocessing_eda.ipynb
 │
 ├── sql/
 │ ├── customer_segmentation.sql
 │ ├── revenue_analysis.sql
-│ ├── retention_analysis.sql
-│ ├── top_customers.sql
+│ ├── delivery_performance.sql
 │
 ├── architecture/
 │ ├── architecture.png
