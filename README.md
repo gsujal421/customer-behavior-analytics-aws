@@ -1,94 +1,173 @@
 # AWS Customer Behavior Analytics Pipeline
 
-## 🔹 Business Problem
-
-An e-commerce business faced:
-
-* Very low customer retention (~3%)
-* Revenue concentrated among few customers
-* Frequent delivery delays (~12 days avg)
-
-Needed a scalable system to analyze customer behavior and operational performance.
+> End-to-end cloud-based analytics pipeline to uncover customer retention, revenue concentration, and operational inefficiencies in an e-commerce dataset.
 
 ---
 
-## 🔹 Solution
+## 🔹 Problem Statement
 
-Built an **end-to-end AWS data analytics pipeline** to transform raw data into actionable insights.
+The business lacked visibility into customer behavior and revenue drivers, resulting in:
 
-**Workflow:**
-Data → Python Processing → S3 (Data Lake) → Glue (Catalog) → Athena (SQL) → Tableau
+- Critically low retention (3%)
+- Revenue concentrated among a small subset of customers
+- High delivery delays (12 days average)
+- No unified analytics system for decision-making
+
+---
+
+## 🔹 Solution Overview
+
+Built a **scalable AWS-based data pipeline** to transform raw transactional data into structured insights for business decision-making.
+
+**Pipeline Flow:**
+
+Raw Data → Python (Cleaning & Feature Engineering) → S3 (Data Lake) → Glue (Catalog) → Athena (SQL) → Tableau (Dashboard)
+
+---
+
+## 🔹 Key Outcomes (What This Project Proves)
+
+- Designed a **data lake architecture on AWS**
+- Performed **end-to-end analytical workflow (data → insight → decision)**
+- Identified **2x revenue opportunity from repeat customers**
+- Diagnosed **retention as the primary business bottleneck**
+- Evaluated **operational inefficiencies vs actual business impact**
 
 ---
 
 ## 🔹 Architecture
 
-![Architecture](architecture/architecture.png)
+![Architecture](docs/architecture.png)
 
 ---
 
-## 🔹 AWS Data Pipeline (Proof)
+## 🔹 AWS Pipeline Execution (Proof of Work)
 
-### S3 Data Lake (Raw → Processed → Curated)
+### 📦 S3 Data Lake
 
-![S3](outputs/screenshots/s3_bucket.png)
+- Implemented layered storage: **raw → processed**
+- Enabled scalable and cost-efficient data access
 
-### Raw Data
-
-![Raw](outputs/screenshots/raw_data.png)
-
-### Processed Data
-
-![Processed](outputs/screenshots/processed_data.png)
-
-### Glue Catalog
-
-![Glue](outputs/screenshots/glue_crawler.png)
-
-### Athena (Tables + Query)
-
-![Athena](outputs/screenshots/athena_tables.png)
+![S3](docs/aws/s3_bucket.png)
 
 ---
 
-## 🔹 Key Analysis
+###  Raw Data Ingestion
 
-* Customer segmentation (high vs low value)
-* Revenue trends & AOV
-* Repeat vs one-time behavior
-* Delivery delay analysis
-* Retention vs delivery impact
+- Uploaded structured e-commerce datasets into S3
 
-📁 SQL: `/sql/athena_queries.sql`
+![Raw](docs/aws/raw_data.png)
+
+---
+
+###  Data Processing (Python)
+
+- Cleaned missing values, standardized schema
+- Performed feature engineering for analysis readiness
+
+![Processed](docs/aws/processed_data.png)
+
+---
+
+###  AWS Glue Data Catalog
+
+- Automated schema detection using Glue Crawler
+- Created metadata layer for Athena querying
+
+![Glue](docs/aws/glue_crawler.png)
+
+---
+
+###  Amazon Athena (SQL Engine)
+
+- Executed analytical queries directly on S3
+- No infrastructure setup required (serverless)
+
+![Athena](docs/aws/athena_tables.png)
+
+---
+
+## 🔹 Analytical Breakdown
+
+### 1. Customer Segmentation
+- Identified high-value vs low-value users
+- Analyzed purchase frequency and spending behavior
+
+### 2. Revenue Analysis
+- Evaluated revenue distribution across customers
+- Detected heavy dependency on top contributors
+
+### 3. Retention Analysis
+- Compared repeat vs one-time customers
+- Quantified retention rate (~3%)
+
+### 4. Delivery Performance
+- Measured delivery delays (~12 days avg)
+- Assessed impact on customer retention
+
+📁 SQL Queries: `/sql/`
 
 ---
 
 ## 🔹 Key Insights
 
-* Retention is critically low (~3%)
-* Repeat customers spend ~2x more
-* Avg delivery delay ≈ 12 days
-* Delays have weak correlation with retention
-* Revenue dependency on top customers
+- 🔻 Retention is critically low (~3%), limiting long-term growth  
+- 💰 Repeat customers generate ~2x higher revenue than one-time users  
+- 🚚 Average delivery delay ≈ 12 days  
+- 📉 Delivery delays have weak correlation with retention  
+- ⚠️ Revenue is concentrated among a small segment of customers  
 
 ---
 
-## 🔹 Business Impact
+## 🔹 Business Implications
 
-* Identified high-value customer segment
-* Highlighted retention as primary growth lever
-* Exposed operational inefficiencies in delivery
+| Observation | Insight | Action |
+|------------|--------|--------|
+| Low retention | Growth bottleneck | Invest in retention strategies (loyalty, re-engagement) |
+| High-value customers | Disproportionate revenue impact | Target and retain top users |
+| Delivery delays | Not primary churn driver | Optimize selectively |
+| Revenue concentration | High risk exposure | Diversify customer base |
 
 ---
 
 ## 🔹 Dashboard
 
-![Dashboard](dashboard/tableau_dashboard.png)
+![Dashboard](dashboard/dashboard_preview.png)
 
 ---
 
 ## 🔹 Tech Stack
 
-S3 • Glue • Athena • Python • SQL • Tableau
+**AWS S3 • AWS Glue • Amazon Athena • Python • SQL • Tableau**
+
+---
+
+## 🔹 Project Structure
+
+
+
+
+---
+
+
+---
+
+## 🔹 Future Enhancements
+
+- Churn prediction model (ML)
+- Cohort and LTV analysis
+- Automated pipeline (AWS Lambda / Airflow)
+- Real-time data ingestion
+
+---
+
+## 🔹 Key Takeaway
+
+This project demonstrates the ability to:
+
+- Build scalable data pipelines on AWS  
+- Perform structured business analysis using SQL  
+- Translate data into actionable insights  
+- Prioritize decisions based on measurable impact  
 
 ---
